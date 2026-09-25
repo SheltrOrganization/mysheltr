@@ -14,10 +14,13 @@ export const siteConfig = {
   // TODO: confirm the production marketing domain before launch.
   url: "https://mysheltr.in",
 
-  // TODO: replace with the real web-app origin once the tenant/landlord
-  // web client ships. `erp.mysheltr.in` is the backend/API host, not a
-  // consumer-facing app — do not link to it directly from marketing pages.
-  webAppUrl: "https://app.mysheltr.in",
+  // TODO(placeholder): intentionally empty — the tenant/landlord web app
+  // isn't live yet. `ButtonLink` renders every CTA that points here as a
+  // visible but inert (non-navigating) button while this stays empty.
+  // Set to the real web-app origin once it ships. `erp.mysheltr.in` is the
+  // backend/API host, not a consumer-facing app — never link to it directly
+  // from marketing pages.
+  webAppUrl: "",
 
   links: {
     // TODO(placeholder): replace with live Play Store listing URL.

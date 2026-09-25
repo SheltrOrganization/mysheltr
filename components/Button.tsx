@@ -34,12 +34,21 @@ export function ButtonLink({
   size?: Size;
   className?: string;
 } & AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const combinedClassName = `${base} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+
+  // No destination configured (e.g. the web app isn't live yet): render the
+  // same visual button, but as an inert, non-navigating control instead of
+  // a link — keeps it visible and clickable without pointing anywhere.
+  if (!href) {
+    return (
+      <button type="button" className={combinedClassName}>
+        {children}
+      </button>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className={`${base} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
-      {...rest}
-    >
+    <Link href={href} className={combinedClassName} {...rest}>
       {children}
     </Link>
   );
