@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand tokens — derived from the Sheltr app's own AA-compliant palette
+     (lib/core/theme/app_colors.dart), warmed for a marketing-site surface. */
+  --color-primary: #b33d24; /* coral/700 */
+  --color-primary-hover: #963421;
+  --color-primary-pressed: #8a2814;
+  --color-primary-tint: #fad9d0;
+
+  --color-background: #fdf6f1; /* soft blush/peach */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f7f1ea;
+
+  --color-heading: #3a1f17; /* deep brown */
+  --color-body: #5c4a3e; /* warm body text */
+  --color-muted: #8a7b70;
+  --color-border: #e7ddd3;
+
+  --color-verified: #19865a; /* green — verification states only */
+  --color-verified-tint: #e3f5ec;
+
+  --color-accent: #2e6e6a; /* teal ink, secondary accent */
+  --color-warning: #a86700;
+  --color-danger: #be3e27;
+
+  --font-display: "Fraunces", var(--font-sans), serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-primary: #ff8a68;
+    --color-primary-hover: #ffa084;
+    --color-primary-pressed: #ffb49c;
+    --color-primary-tint: #4a241a;
+
+    --color-background: #1c1512;
+    --color-surface: #241a16;
+    --color-surface-muted: #2c211c;
+
+    --color-heading: #f7ece5;
+    --color-body: #d8c7bd;
+    --color-muted: #a3907f;
+    --color-border: #3a2c25;
+
+    --color-verified: #4fd39a;
+    --color-verified-tint: #163629;
+
+    --color-accent: #6fc3bd;
+    --color-warning: #e0a53f;
+    --color-danger: #ff7a5c;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-primary: #ff8a68;
+  --color-primary-hover: #ffa084;
+  --color-primary-pressed: #ffb49c;
+  --color-primary-tint: #4a241a;
+
+  --color-background: #1c1512;
+  --color-surface: #241a16;
+  --color-surface-muted: #2c211c;
+
+  --color-heading: #f7ece5;
+  --color-body: #d8c7bd;
+  --color-muted: #a3907f;
+  --color-border: #3a2c25;
+
+  --color-verified: #4fd39a;
+  --color-verified-tint: #163629;
+
+  --color-accent: #6fc3bd;
+  --color-warning: #e0a53f;
+  --color-danger: #ff7a5c;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-heading);
+  font-family: var(--font-display);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
