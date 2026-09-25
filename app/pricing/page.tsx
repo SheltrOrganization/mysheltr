@@ -52,11 +52,11 @@ export default function PricingPage() {
             </p>
           </div>
           <div>
-            <h3 className="text-base font-semibold text-heading">A fixed unlock quota</h3>
+            <h3 className="text-base font-semibold text-heading">A contact-unlock quota</h3>
             <p className="mt-2 text-sm leading-relaxed text-body">
-              Each Pass comes with a set number of unlocks — or unlimited unlocks on Premium.
-              Unlocking a new landlord&apos;s number uses one unlock from your quota.
-              Re-viewing an unlocked contact is free.
+              Each Pass comes with an unlock quota — the exact number per plan is being finalized
+              and will be confirmed soon. Unlocking a new landlord&apos;s number uses one unlock
+              from your quota. Re-viewing an unlocked contact is free.
             </p>
           </div>
           <div>
@@ -71,7 +71,10 @@ export default function PricingPage() {
 
       {/* Plans */}
       <Section id="plans">
-        <SectionHeading eyebrow="Choose a plan" title="Three plans, all paid securely via Razorpay" />
+        <SectionHeading
+          eyebrow="Choose a plan"
+          title="Three plans, paid securely via Razorpay or Apple in-app purchase"
+        />
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {passPlans.map((plan) => (
             <PricingCard key={plan.id} plan={plan} />

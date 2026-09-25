@@ -31,8 +31,7 @@ export const siteConfig = {
   },
 
   contact: {
-    // TODO(placeholder): real support inbox not yet provided.
-    supportEmail: "support@mysheltr.in",
+    supportEmail: "findyoursheltr@gmail.com",
     // TODO(placeholder): real registered business address not yet provided.
     businessAddress: "[Sheltr business address — PLACEHOLDER]",
     businessName: "[Sheltr legal entity name — PLACEHOLDER]",
@@ -43,7 +42,11 @@ export const siteConfig = {
   },
 
   payments: {
+    // Razorpay handles payment on Android and web. iOS payments go through
+    // Apple's in-app purchase system instead (App Store policy requires this
+    // for digital goods) — mention both wherever payment method is described.
     provider: "Razorpay",
+    iosProvider: "Apple in-app purchase",
     currency: "INR",
     currencySymbol: "₹",
   },

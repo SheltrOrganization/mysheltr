@@ -10,9 +10,13 @@ grep -rn "TODO" app components config lib
 grep -rni "coming soon" app components
 ```
 
-Note: **Pass pricing is real data, not a placeholder.** `lib/content.ts` sources plan prices,
-validity, and unlock quotas from the live product docs (BRD/PRD/DATA_MODEL) — it is not listed
-below.
+Note: **Pass pricing and validity are real data, not placeholders.** `lib/content.ts` sources plan
+prices and validity windows from the live product docs (BRD/PRD/DATA_MODEL). **Unlock quota per
+plan is the one exception** — product has confirmed the exact number of unlocks per plan is not
+finalized yet, so `PassPlan.unlockQuota` is intentionally typed as `"unspecified"` and rendered as
+"Contact unlocks: to be confirmed" everywhere it appears (`components/PricingCard.tsx`,
+`app/pricing/page.tsx`, and the "What is a Sheltr Pass?" FAQ answer in `lib/content.ts`). Update
+`PassPlan.unlockQuota`'s type and the three `passPlans` entries once real numbers are confirmed.
 
 ---
 
@@ -21,15 +25,15 @@ below.
 | Item | File | Current value | What's needed |
 |---|---|---|---|
 | Production marketing domain | `config/site.ts` (`url`) | `"https://mysheltr.in"` | Confirm this is the real production domain before launch (flagged with a `TODO` in the source: "confirm the production marketing domain before launch"). |
-| Web app origin | `config/site.ts` (`webAppUrl`) | `"https://app.mysheltr.in"` | Replace with the real tenant/landlord web-app origin once that client ships. Source comment explicitly warns not to link to `erp.mysheltr.in` (the backend/API host) directly. |
+| Web app origin | `config/site.ts` (`webAppUrl`) | `""` (empty) | The tenant/landlord web app isn't live yet, so every CTA that would point here (`ButtonLink` with `href={siteConfig.webAppUrl}`) intentionally renders as a visible but inert, non-navigating `<button>` instead of a link. Set to the real web-app origin once it ships — CTAs will automatically become real links again. Source comment explicitly warns not to link to `erp.mysheltr.in` (the backend/API host) directly. |
 | Play Store listing | `config/site.ts` (`links.playStore`) | `"https://play.google.com/store/apps/details?id=PLACEHOLDER"` | Replace `id=PLACEHOLDER` with the real Play Store package ID once listed live. |
 | App Store listing | `config/site.ts` (`links.appStore`) | `"https://apps.apple.com/app/idPLACEHOLDER"` | Replace `idPLACEHOLDER` with the real App Store ID. Source comment notes this is expected once the HESICS iOS release (target 2026-10-10) ships. Also referenced as "(coming soon)" next to the App Store button in `components/AppDownload.tsx` — remove that label once the real link is live. |
 
 ## 2. Emails / contact
 
-| Item | File | Current value | What's needed |
+| Item | File | Current value | Status |
 |---|---|---|---|
-| Support email | `config/site.ts` (`contact.supportEmail`) | `"support@mysheltr.in"` | Source comment: "real support inbox not yet provided." Confirm this inbox actually exists and is monitored before launch — it's used across the site (footer, contact page, all four legal pages). |
+| Support email | `config/site.ts` (`contact.supportEmail`) | `"findyoursheltr@gmail.com"` | **Resolved** — confirmed real inbox, used across the site (footer, contact page, all four legal pages). Note: the Privacy Policy page (`app/legal/privacy-policy/page.tsx`) uses two different, role-specific addresses instead — `findyoursheltr@gmail.com` (tenant) and `rentyoursheltr@gmail.com` (landlord) — sourced verbatim from the app's own privacy copy in `lib/legalContent.ts`, not from this config value. |
 
 ## 3. Business address / legal entity name
 

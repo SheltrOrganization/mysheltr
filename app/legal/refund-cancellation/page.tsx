@@ -33,9 +33,10 @@ export default function RefundCancellationPage() {
           <h2 className="text-2xl font-semibold text-heading">1. Passes are digital products</h2>
           <p className="mt-3 leading-relaxed text-body">
             A Sheltr Pass is a digital, time-boxed, quota-limited product: it activates
-            immediately on successful payment and grants a fixed number of contact unlocks for a
-            fixed number of days. Because a Pass is delivered and can be used instantly, it is
-            different from a physical good, and our refund stance reflects that.
+            immediately on successful payment and grants a contact-unlock quota (exact number per
+            plan to be confirmed) for a fixed number of days. Because a Pass is delivered and can
+            be used instantly, it is different from a physical good, and our refund stance
+            reflects that.
           </p>
         </section>
 
@@ -69,10 +70,13 @@ export default function RefundCancellationPage() {
         <section>
           <h2 className="text-2xl font-semibold text-heading">4. How refunds are processed</h2>
           <p className="mt-3 leading-relaxed text-body">
-            Approved refunds are processed back to your original payment method via Razorpay. On
-            our side, a System Manager reviews and manually processes approved refunds — this is a
-            real, working capability in our backend, not a placeholder. Processing times after
-            approval depend on your bank or payment provider.
+            For payments made on Android or web (via Razorpay), approved refunds are processed
+            back to your original payment method — on our side, a System Manager reviews and
+            manually processes these, a real, working capability in our backend, not a
+            placeholder. For payments made on iOS through Apple&apos;s in-app purchase system,
+            refunds are issued by Apple directly under their own refund policy — we&apos;ll support
+            your request, but the refund itself is processed by Apple, not Sheltr. Processing
+            times after approval depend on your bank, payment provider, or Apple.
           </p>
         </section>
 

@@ -10,20 +10,24 @@ export type PassPlan = {
   name: string;
   priceInInr: number;
   validityDays: number;
-  unlockQuota: number | "unlimited";
+  // TODO(placeholder): the exact unlock quota per plan is not finalized yet
+  // — keep this unspecified everywhere it's rendered until product confirms
+  // real numbers. Do not substitute a guessed number or "unlimited".
+  unlockQuota: "unspecified";
   highlight?: boolean;
   description: string;
 };
 
 // Seeded idempotently by the backend's setup/install.py — see DATA_MODEL.md
-// "Pass Plan". These are the live, real tiers, not placeholders.
+// "Pass Plan". Price and validity are the live, real tiers; unlock quota is
+// intentionally left unspecified (not yet finalized — see PassPlan above).
 export const passPlans: PassPlan[] = [
   {
     id: "starter",
     name: "Starter",
     priceInInr: 299,
     validityDays: 7,
-    unlockQuota: 5,
+    unlockQuota: "unspecified",
     description: "For a focused, short search in one neighbourhood.",
   },
   {
@@ -31,7 +35,7 @@ export const passPlans: PassPlan[] = [
     name: "Standard",
     priceInInr: 499,
     validityDays: 15,
-    unlockQuota: 12,
+    unlockQuota: "unspecified",
     highlight: true,
     description: "The most-picked plan for a typical city-wide search.",
   },
@@ -40,8 +44,8 @@ export const passPlans: PassPlan[] = [
     name: "Premium",
     priceInInr: 999,
     validityDays: 30,
-    unlockQuota: "unlimited",
-    description: "Unlimited unlocks for a month — for a wide, unhurried search.",
+    unlockQuota: "unspecified",
+    description: "For a wide, unhurried search across the city.",
   },
 ];
 
@@ -68,7 +72,7 @@ export const faqItems: FaqItem[] = [
     audience: "tenant",
     question: "What is a Sheltr Pass?",
     answer:
-      "A time-boxed pass that unlocks a fixed number of landlord phone numbers. Plans range from a 7-day Starter pass (5 unlocks) to a 30-day Premium pass (unlimited unlocks). Payments are handled securely through Razorpay.",
+      "A time-boxed pass that unlocks landlord phone numbers. Plans range from a 7-day Starter pass to a 30-day Premium pass — the exact number of unlocks per plan will be confirmed soon. Payments are handled securely through Razorpay, or through Apple's in-app purchase system on iOS.",
   },
   {
     audience: "tenant",

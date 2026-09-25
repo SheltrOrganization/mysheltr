@@ -85,12 +85,13 @@ export default function TermsOfServicePage() {
         <section>
           <h2 className="text-2xl font-semibold text-heading">5. Sheltr Pass purchases</h2>
           <p className="mt-3 leading-relaxed text-body">
-            A Sheltr Pass is a time-boxed, quota-limited digital product that unlocks a fixed
-            number of landlord contacts within a fixed validity window, as described on our{" "}
+            A Sheltr Pass is a time-boxed, quota-limited digital product that unlocks landlord
+            contacts within a fixed validity window, as described on our{" "}
             <a href="/pricing" className="text-primary hover:underline">
               pricing page
             </a>
-            . Passes are paid for securely via Razorpay. Pass purchases are non-refundable except
+            . Passes are paid for securely via Razorpay (Android and web) or Apple&apos;s in-app
+            purchase system (iOS). Pass purchases are non-refundable except
             as described in our{" "}
             <a href="/legal/refund-cancellation" className="text-primary hover:underline">
               Refund &amp; Cancellation Policy

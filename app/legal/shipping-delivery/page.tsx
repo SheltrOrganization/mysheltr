@@ -30,7 +30,8 @@ export default function ShippingDeliveryPage() {
           <p className="mt-3 leading-relaxed text-body">
             {siteConfig.name} Passes are digital services — there is no physical product and
             nothing is shipped. A Pass is delivered and activated digitally, immediately after
-            successful payment via Razorpay, and appears in your account ready to use right away.
+            successful payment via Razorpay (Android and web) or Apple&apos;s in-app purchase
+            system (iOS), and appears in your account ready to use right away.
           </p>
         </section>
 

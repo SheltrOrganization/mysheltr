@@ -88,7 +88,7 @@ export default function HomePage() {
             <HowItWorks
               steps={[
                 { title: "Browse free", description: "Search verified listings by city, budget, and type — no cost, no login wall." },
-                { title: "Buy a Pass", description: "Choose a time-boxed Pass that fits your search, paid securely via Razorpay." },
+                { title: "Buy a Pass", description: "Choose a time-boxed Pass that fits your search, paid securely via Razorpay or Apple in-app purchase on iOS." },
                 { title: "Unlock contact", description: "Reveal a landlord's number using your Pass's unlock quota." },
                 { title: "Connect directly", description: "Call or message the landlord yourself — no broker in between." },
               ]}

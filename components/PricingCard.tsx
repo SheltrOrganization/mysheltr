@@ -23,17 +23,16 @@ export function PricingCard({ plan }: { plan: PassPlan }) {
           {plan.priceInInr}
         </span>
       </p>
-      <p className="mt-1 text-sm text-muted">one-time, via Razorpay</p>
+      <p className="mt-1 text-sm text-muted">
+        one-time, via Razorpay or Apple in-app purchase (iOS)
+      </p>
 
       <ul className="mt-6 space-y-3 text-sm text-body">
         <li className="flex items-start gap-2">
           <Dot /> Valid for {plan.validityDays} days
         </li>
         <li className="flex items-start gap-2">
-          <Dot />
-          {plan.unlockQuota === "unlimited"
-            ? "Unlimited contact unlocks"
-            : `${plan.unlockQuota} contact unlocks`}
+          <Dot /> Contact unlocks: to be confirmed
         </li>
         <li className="flex items-start gap-2">
           <Dot /> Re-viewing an unlocked contact is free
